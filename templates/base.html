@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyush's Portfolio</title>
+    <link rel="stylesheet" href="/static/css/output.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body class="font-sans">
+    <header>
+        <!-- Nav Bar -->
+        <nav class="bg-gradient-to-r from-purple-500 to-blue-500 text-white text-center py-6 sticky top-0">
+            <ul class="flex justify-center space-x-6">
+              <li>
+                <a href="#about" class="font-bold text-white hover:text-yellow-300">About</a>
+              </li>
+              <li>
+                <a href="#projects" class="font-bold text-white hover:text-yellow-300">Projects</a>
+              </li>
+              <li>
+                <a href="#contact" class="font-bold text-white hover:text-yellow-300">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-purple-500 to-blue-500 text-white text-center py-6">
+            <div class="text-center">
+              <h1 class="text-4xl md:text-6xl font-bold mb-4">Piyush's Portfolio</h1>
+              <p class="text-lg md:text-2xl mb-6">Showcasing my web development and AI skills</p>
+              <a href="#projects" class="bg-yellow-400 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-yellow-300">
+                See My Work
+              </a>
+            </div>
+          </section>
+    </header>
+    <main>
+        <!-- Flash Messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            <p class="flash {{ category }} p-2 rounded mb-2">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% endwith %}
+
+        {% block content %}{% endblock content %}
+
+    </main>
+    <footer class="text-center py-3 bg-gray-800 text-white">
+        <p>© 2025 Piyush. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>
