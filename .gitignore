@@ -1,10 +1,22 @@
-# Python
+# Python-related files
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
 .venv/
 
-# VS Code
-.vscode/
+# Node.js-related files
+node_modules/
+package-lock.json
 
-# Environment
-venv/
-.venv
+# Tailwind build output
+static/css/output.css
+
+# OS or Editor-specific files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
